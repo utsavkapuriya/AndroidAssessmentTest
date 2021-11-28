@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">AndroidAssesmentTestApp</string>
+    <string name="app_name">AndroidAssesmentTest</string>
+    <string name="hint_search">Search</string>
 </resources>
