@@ -14,12 +14,17 @@ import com.test.androidassesmenttest.util.AppConstant
 import com.test.androidassesmenttest.util.putArgs
 
 class DetailFragment : Fragment() {
+    companion object {
+        fun newInstance(result: Result) = DetailFragment().putArgs {
+            putParcelable(AppConstant.KEY_RESULT, result)
+        }
+    }
     private lateinit var binding: FragmentLocationDetailBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         binding = FragmentLocationDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -30,18 +35,12 @@ class DetailFragment : Fragment() {
         result?.let { setData(it) }
     }
 
-    companion object {
-        fun newInstance(result: Result) = DetailFragment().putArgs {
-            putParcelable(AppConstant.KEY_RESULT, result)
-        }
-    }
-
-    fun setData(data: Result) {
+    private fun setData(data: Result) {
         binding.apply {
             detailTxtName.text = data.name
             detailTxtDesc.text = data.location.run {
-                address.plus("\n ").plus(locality).plus("\n ")
-                    .plus(country).plus("\n ").plus(region).plus("\n ")
+                address.plus("\n").plus(locality).plus("\n")
+                    .plus(country).plus("\n").plus(region).plus("\n")
                     .plus(postcode)
             }
         }

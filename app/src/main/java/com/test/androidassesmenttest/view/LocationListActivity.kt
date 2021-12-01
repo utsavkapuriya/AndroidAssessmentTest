@@ -10,10 +10,10 @@ class LocationListActivity : AppCompatActivity(), LocationListAdapter.OnItemSele
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState != null) {
+        savedInstanceState?.let {
             supportFragmentManager.executePendingTransactions()
             val fragmentById = supportFragmentManager.findFragmentById(R.id.fragment_container)
-            if (fragmentById != null) {
+            fragmentById?.let {
                 supportFragmentManager.beginTransaction()
                     .remove(fragmentById).commit()
             }

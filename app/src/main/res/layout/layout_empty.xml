@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewEmptyList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="No Data found"
-        android:textSize="16sp" />
+        android:text="@string/no_data_found"
+        android:textSize="@dimen/empty_layout_text_size" />
 </FrameLayout>

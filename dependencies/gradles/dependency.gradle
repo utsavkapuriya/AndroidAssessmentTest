@@ -1,0 +1,31 @@
+ext.test = [
+        mockk                    : "io.mockk:mockk:${MOCKK_VERSION}",
+        junit                    : "junit:junit:${JUNIT_VERSION}",
+        androidXJunitExt         : "androidx.test.ext:junit:${ANDROID_X_JUNIT_EXT}"
+]
+
+ext.androidx = [
+        coreKtx              : "androidx.core:core-ktx:${ANDROID_CORE_VERSION}",
+        appcompat            : "androidx.appcompat:appcompat:${ANDROID_X_VERSION}",
+        material             : "com.google.android.material:material:${MATERIAL_VERSION}",
+        constraintLayout     : "androidx.constraintlayout:constraintlayout:${CONSTRAINT_LAYOUT_VERSION}",
+        liveDataExt          : "androidx.lifecycle:lifecycle-extensions:${LIVE_DATA_EXT}",
+        liveDataKtx          : "androidx.lifecycle:lifecycle-livedata-ktx:${LIVE_DATA_KTX}"
+]
+
+ext.kotlin = [
+        stdlib         : "org.jetbrains.kotlin:kotlin-stdlib:${KOTLIN_VERSION}",
+        coroutines     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${KOTLIN_COROUTINE_VERSION}",
+        coroutines_core: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${KOTLIN_COROUTINE_VERSION}",
+        stdlib_jdk7    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${KOTLIN_VERSION}"
+]
+
+ext.glide = [
+        glide          : "com.github.bumptech.glide:glide:${GLIDE_GLIDE_VERSION}",
+]
+
+ext.other = [
+        gson   : "com.google.code.gson:gson:${GSON_VERSION}",
+        retrofit   : "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}",
+        retrofit_convertor_gson   : "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}",
+]

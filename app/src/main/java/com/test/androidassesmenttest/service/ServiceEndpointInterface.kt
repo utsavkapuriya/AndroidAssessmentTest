@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface ServiceEndpointInterface {
     @GET("places/search")
-    fun getLocationsBySearch(@Query("near") near: String): Call<ResponseData>
+    suspend fun getLocationsBySearch(@Query("near") near: String): ResponseData
 }

@@ -3,4 +3,10 @@
     <dimen name="cardview_margin">8dp</dimen>
     <dimen name="card_elevation">8dp</dimen>
     <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="location_detail_root_padding">16dp</dimen>
+    <dimen name="location_list_recyclerview_margin">8dp</dimen>
+    <dimen name="empty_layout_text_size">16sp</dimen>
+    <dimen name="error_text_margin_start">20dp</dimen>
+    <dimen name="error_text_margin_end">20dp</dimen>
+    <dimen name="row_location_text_margin_top">8dp</dimen>
 </resources>

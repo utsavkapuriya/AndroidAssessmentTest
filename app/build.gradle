@@ -3,18 +3,20 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-parcelize'
 }
-
+apply from: "${rootProject.projectDir}/dependencies/gradles/main.gradle"
 android {
-    compileSdk 31
-
+    with commonConfig
+    buildTypes {
+        debug {
+            testCoverageEnabled = true
+        }
+    }
     defaultConfig {
+        with defaultConfigExt
         applicationId "com.test.androidassesmenttest"
-        minSdk 26
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 1
+        versionName System.getenv("VERSION_STRING") as String ?: DEFAULT_VERSION_NAME
         buildConfigField("String", "FOURSQUARE_API_KEY", foursquareapikey)
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -25,35 +27,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
-
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
-
+    implementation androidx.coreKtx
+    implementation androidx.appcompat
+    implementation androidx.material
+    implementation androidx.constraintLayout
+    //coroutines
+    implementation kotlin.coroutines
+    implementation kotlin.coroutines_core
     //ViewModel and livedata
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation androidx.liveDataKtx
+    implementation androidx.liveDataExt
     //Retrofit
-    implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-
-    implementation "com.github.bumptech.glide:glide:4.12.0"
+    implementation other.gson
+    implementation other.retrofit
+    implementation other.retrofit_convertor_gson
+    implementation glide.glide
     //Mockk kotlin test case
-    testImplementation "io.mockk:mockk:1.10.0"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation test.mockk
+    androidTestImplementation test.androidXJunitExt
 }

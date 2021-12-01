@@ -5,5 +5,5 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class ResponseData(
-    val results: MutableList<Result>
+    val results: List<Result>
 ) : Parcelable

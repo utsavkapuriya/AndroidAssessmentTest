@@ -11,5 +11,5 @@ data class Location(
     val locality: String,
     val neighborhood: List<String>,
     val postcode: String,
-    val region: String
-): Parcelable
+    val region: String,
+) : Parcelable

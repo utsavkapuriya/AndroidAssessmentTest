@@ -10,7 +10,7 @@ import com.test.androidassesmenttest.model.Result
 
 class LocationListAdapter(context: Context) : RecyclerView.Adapter<LocationListAdapter.LocationViewHolder>() {
 
-    private var locations = mutableListOf<Result>()
+    private var locations = listOf<Result>()
     private val clickHandler: OnItemSelectedListener = context as OnItemSelectedListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationViewHolder {
@@ -31,7 +31,7 @@ class LocationListAdapter(context: Context) : RecyclerView.Adapter<LocationListA
      * Update the latest location data to the list view
      * @param locations : Updated location data
      */
-    fun setLocationList(locations: MutableList<Result>) {
+    fun setLocationList(locations: List<Result>) {
         this.locations = locations
         notifyDataSetChanged()
     }

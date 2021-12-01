@@ -10,7 +10,7 @@
     app:cardUseCompatPadding="true">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/row_location_text_margin_top"
         android:id="@+id/rowTxtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
