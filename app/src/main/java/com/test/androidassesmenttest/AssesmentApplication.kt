@@ -8,10 +8,11 @@ class AssesmentApplication : Application() {
     init {
         application = this
     }
+
     companion object {
         private var application: AssesmentApplication? = null
 
-        fun applicationContext() : Context {
+        fun applicationContext(): Context {
             return application!!.applicationContext
         }
     }

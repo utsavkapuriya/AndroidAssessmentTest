@@ -1,25 +1,24 @@
 package com.test.androidassesmenttest.view
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
-import com.test.androidassesmenttest.R
 import com.test.androidassesmenttest.databinding.FragmentLocationDetailBinding
-import com.test.androidassesmenttest.databinding.FragmentLocationListBinding
 import com.test.androidassesmenttest.model.Result
 import com.test.androidassesmenttest.util.AppConstant
 import com.test.androidassesmenttest.util.putArgs
 
 class DetailFragment : Fragment() {
+
+    private lateinit var binding: FragmentLocationDetailBinding
+
     companion object {
         fun newInstance(result: Result) = DetailFragment().putArgs {
             putParcelable(AppConstant.KEY_RESULT, result)
         }
     }
-    private lateinit var binding: FragmentLocationDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

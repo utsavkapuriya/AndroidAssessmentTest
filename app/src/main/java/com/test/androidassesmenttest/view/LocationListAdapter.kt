@@ -4,14 +4,18 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.test.androidassesmenttest.databinding.RowLocationListBinding
 import com.test.androidassesmenttest.model.Result
 
-class LocationListAdapter(context: Context) : RecyclerView.Adapter<LocationListAdapter.LocationViewHolder>() {
+class LocationListAdapter(context: Context) :
+    RecyclerView.Adapter<LocationListAdapter.LocationViewHolder>() {
 
     private var locations = listOf<Result>()
     private val clickHandler: OnItemSelectedListener = context as OnItemSelectedListener
+
+    interface OnItemSelectedListener {
+        fun onLocationItemSelected(data: Result)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -34,10 +38,6 @@ class LocationListAdapter(context: Context) : RecyclerView.Adapter<LocationListA
     fun setLocationList(locations: List<Result>) {
         this.locations = locations
         notifyDataSetChanged()
-    }
-
-    interface OnItemSelectedListener {
-        fun onLocationItemSelected(data: Result)
     }
 
     class LocationViewHolder(val binding: RowLocationListBinding) :

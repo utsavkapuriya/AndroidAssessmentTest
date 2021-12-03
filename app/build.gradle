@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-parcelize'
+//    id 'kotlin-kapt'
 }
 apply from: "${rootProject.projectDir}/dependencies/gradles/main.gradle"
 android {
@@ -40,12 +41,15 @@ dependencies {
     //ViewModel and livedata
     implementation androidx.liveDataKtx
     implementation androidx.liveDataExt
-    //Retrofit
+    implementation androidx.lifecycleViewModel
+    //Other
     implementation other.gson
     implementation other.retrofit
     implementation other.retrofit_convertor_gson
     implementation glide.glide
-    //Mockk kotlin test case
-    testImplementation test.mockk
-    androidTestImplementation test.androidXJunitExt
+    //test
+    testImplementation test.junit
+    testImplementation test.mockitoCore
+    testImplementation test.archCoreTest
+    testImplementation test.kotlinxCoroutineXTest
 }

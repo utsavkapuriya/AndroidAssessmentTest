@@ -45,7 +45,8 @@ class LocationListFragment : Fragment() {
         viewModel = ViewModelProvider(
             this,
             LocationViewModelFactory(
-                LocationRepository(retrofitService.retrofitService))
+                LocationRepository(retrofitService.retrofitService)
+            )
         ).get(LocationViewModel::class.java)
     }
 

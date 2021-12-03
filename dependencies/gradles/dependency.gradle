@@ -1,7 +1,10 @@
 ext.test = [
-        mockk                    : "io.mockk:mockk:${MOCKK_VERSION}",
         junit                    : "junit:junit:${JUNIT_VERSION}",
-        androidXJunitExt         : "androidx.test.ext:junit:${ANDROID_X_JUNIT_EXT}"
+        androidXJunitExt         : "androidx.test.ext:junit:${ANDROID_X_JUNIT_EXT}",
+        mockitoCore              : "org.mockito:mockito-core:${MOCKITO_VERSION}",
+        androidArchTestingCore   : "android.arch.core:core-testing:${ANDROID_ARCH_VERSION}",
+        kotlinxCoroutineXTest    : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${KOTLIN_COROUTINE_VERSION}",
+        archCoreTest             : "androidx.arch.core:core-testing:${ARCH_TESTING_VERSION}"
 ]
 
 ext.androidx = [
@@ -10,7 +13,8 @@ ext.androidx = [
         material             : "com.google.android.material:material:${MATERIAL_VERSION}",
         constraintLayout     : "androidx.constraintlayout:constraintlayout:${CONSTRAINT_LAYOUT_VERSION}",
         liveDataExt          : "androidx.lifecycle:lifecycle-extensions:${LIVE_DATA_EXT}",
-        liveDataKtx          : "androidx.lifecycle:lifecycle-livedata-ktx:${LIVE_DATA_KTX}"
+        liveDataKtx          : "androidx.lifecycle:lifecycle-livedata-ktx:${LIVE_DATA_KTX}",
+        lifecycleViewModel   : "androidx.lifecycle:lifecycle-viewmodel-ktx:${LIVE_DATA_KTX}"
 ]
 
 ext.kotlin = [
@@ -25,7 +29,7 @@ ext.glide = [
 ]
 
 ext.other = [
-        gson   : "com.google.code.gson:gson:${GSON_VERSION}",
-        retrofit   : "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}",
+        gson                      : "com.google.code.gson:gson:${GSON_VERSION}",
+        retrofit                  : "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}",
         retrofit_convertor_gson   : "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}",
 ]

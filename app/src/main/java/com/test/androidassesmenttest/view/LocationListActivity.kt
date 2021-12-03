@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.test.androidassesmenttest.R
 import com.test.androidassesmenttest.model.Result
-import com.test.androidassesmenttest.util.putArgs
 
 class LocationListActivity : AppCompatActivity(), LocationListAdapter.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
